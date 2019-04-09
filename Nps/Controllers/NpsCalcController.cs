@@ -19,6 +19,7 @@ namespace Nps.Controllers
 
         public IActionResult CalcNps(NpsCalc nps)
         {
+            nps.Customers = 0;
             return View(nameof(Index), nps);
         }
     }

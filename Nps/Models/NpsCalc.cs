@@ -5,16 +5,21 @@ namespace Nps.Models
 {
     public class NpsCalc
     {
+        [Range(1, 9999999, ErrorMessage ="valor inválido")]
         [Display(Name ="Clientes")]
         [Required(ErrorMessage ="o valor é obrigatório")]
         public int Customers { get; set; }
 
+
+        [Range(1, 9999999, ErrorMessage = "valor inválido")]
         [Required(ErrorMessage = "o valor é obrigatório")]
         public int Promoters { get; set; }
 
+        [Range(1, 9999999, ErrorMessage = "valor inválido")]
         [Required(ErrorMessage = "o valor é obrigatório")]
         public int Neutrals { get; set; }
 
+        [Range(1, 9999999, ErrorMessage = "valor inválido")]
         [Required(ErrorMessage = "o valor é obrigatório")]
         public int Detractors { get; set; }
 

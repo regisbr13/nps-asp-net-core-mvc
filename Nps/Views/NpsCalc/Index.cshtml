@@ -41,7 +41,7 @@
     }
     else
     {
-        if (Model.Promoters == 0)
+        if (Model.Customers != 0)
         {
             <div class="row text-center">
                 <h3>Cálculo do tamanho da amostra:</h3>
@@ -115,7 +115,7 @@
                             </tr>
                             <tr>
                                 <th>Intervalo confiança:</th>
-                                <td>@Html.DisplayName("[" + Model.Interval95()[0] + "," + Model.Interval95()[1] + "]")</td>
+                                <td>@Html.DisplayName("[" + Model.Interval95()[0] + ", " + Model.Interval95()[1] + "]")</td>
                             </tr>
                             <tr>
                                 <th class="bg-info">Estatísticas para 99% de confiança:</th>
@@ -127,7 +127,7 @@
                             </tr>
                             <tr>
                                 <th>Intervalo de confiança:</th>
-                                <td>@Html.DisplayName("[" + Model.Interval99()[0] + "," + Model.Interval99()[1] + "]")</td>
+                                <td>@Html.DisplayName("[" + Model.Interval99()[0] + ", " + Model.Interval99()[1] + "]")</td>
                             </tr>
                         </table>
                     </div>
