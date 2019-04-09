@@ -31,7 +31,7 @@ namespace Nps.Models
 
         public int Sends()
         {
-            return (int)(Customers / 0.25);
+            return (int)(SampleSize() / 0.25);
         }
 
         public double Total()

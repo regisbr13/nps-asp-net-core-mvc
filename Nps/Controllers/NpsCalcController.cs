@@ -12,9 +12,7 @@ namespace Nps.Controllers
 
         public IActionResult SampleSize(NpsCalc nps)
         {
-            int size = nps.SampleSize();
-            NpsCalc sampleSize = new NpsCalc() { Customers = size };
-            return View(nameof(Index), sampleSize);
+            return View(nameof(Index), nps);
         }
 
         public IActionResult CalcNps(NpsCalc nps)
