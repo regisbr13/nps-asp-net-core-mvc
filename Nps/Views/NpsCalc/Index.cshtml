@@ -27,14 +27,12 @@
             <div>
                 <form asp-action="SampleSize">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
+                    <div class="form-inline">
                         <label asp-for="Customers" class="control-label"></label>
                         <input asp-for="Customers" class="form-control" style="width:150px" />
-                        <span asp-validation-for="Customers" class="text-danger h5"></span>
+                        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i></button>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Save" class="btn btn-success" />
-                    </div>
+                    <span asp-validation-for="Customers" class="text-danger h5"></span>
                 </form>
             </div>
         </div>
@@ -48,12 +46,12 @@
                 <p class="text-info h4">
                     Muito bem! Você precisará de uma amostra de <strong>@Model.SampleSize()</strong> clientes. <br />
                 <p>
-                @if (Model.Customers >= 13000)
-                {
-                <p class="text-info h4">
-                    Dados apontam que em média um a cada quatro clientes responde aos questionários enviados. <br />
-                    Dessa forma você é recomendado que você mande <strong>@Model.Sends()</strong> mensagens.
-                </p>
+                    @if (Model.Customers >= 13000)
+                    {
+                    <p class="text-info h4">
+                        Dados apontam que em média um a cada quatro clientes responde aos questionários enviados. <br />
+                        Dessa forma você é recomendado que você mande <strong>@Model.Sends()</strong> mensagens.
+                    </p>
                 }
 
                     </p>
@@ -67,34 +65,37 @@
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="form-group col-md-4">
                                     <div>
-                                        <img src="~/images/promoters.jpg" />
-                                    </div>                                 <label asp-for="Promoters" class="control-label text-success">Promotores: notas 9 ou 10</label>
+                                        <i class="fas fa-smile fa-3x"></i>
+                                    </div>
+                                    <label asp-for="Promoters" class="control-label text-success">Promotores: notas 9 ou 10</label>
                                     <input asp-for="Promoters" class="form-control" value="" style="width:150px" />
                                     <span asp-validation-for="Promoters" class="text-danger h5"></span>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div>
-                                        <img src="~/images/neutrals.jpg" />
-                                    </div>                                 <label asp-for="Neutrals" class="control-label text-warning">Neutros: notas 7 ou 8</label>
+                                        <i class="fas fa-meh fa-3x"></i>
+                                    </div>
+                                    <label asp-for="Neutrals" class="control-label text-warning">Neutros: notas 7 ou 8</label>
                                     <input asp-for="Neutrals" class="form-control" value="" style="width:150px" />
                                     <span asp-validation-for="Neutrals" class="text-danger h5"></span>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div>
-                                        <img src="~/images/detractors.jpg" />
-                                    </div>                                <label asp-for="Detractors" class="control-label text-danger"> Detratores: notas de 0 a 6</label>
+                                        <i class="fas fa-angry fa-3x"></i>
+                                    </div>
+                                    <label asp-for="Detractors" class="control-label text-danger"> Detratores: notas de 0 a 6</label>
                                     <input asp-for="Detractors" class="form-control" value="" style="width:150px" />
                                     <span asp-validation-for="Detractors" class="text-danger h5"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Calcular NPS" class="btn btn-success" />
+                                    <input type="submit" value="Calcular NPS" class="btn btn-primary" />
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="row" align="center">
-                    <a asp-action="Index" class="btn btn-info">Voltar</a>
+                    <a asp-action="Index" class="btn btn-warning"><i class="glyphicon glyphicon-arrow-left"></i></a>
                 </div>
             }
             else
@@ -141,7 +142,7 @@
                     </div>
                 </div>
                 <div class="row" align="center">
-                    <a asp-action="Index" class="btn btn-info">Novo cálculo</a>
+                    <a asp-action="Index" class="btn btn-primary">Novo cálculo</a>
                 </div>
             }
 

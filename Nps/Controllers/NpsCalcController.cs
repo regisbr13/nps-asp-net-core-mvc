@@ -10,11 +10,13 @@ namespace Nps.Controllers
             return View();
         }
 
+        [HttpPost("/Tamanho-da-amostra")]
         public IActionResult SampleSize(NpsCalc nps)
         {
             return View(nameof(Index), nps);
         }
 
+        [HttpPost("/Valor-NPS")]
         public IActionResult CalcNps(NpsCalc nps)
         {
             nps.Customers = 0;
